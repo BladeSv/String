@@ -1,7 +1,9 @@
 package by.htp.A2;
 
+
+
 public class MainAppStr {
-	static String  MainString="    a qwertui  asdsdf oopilhjll  o  klmyio dddd jjj  ";
+	static String  MainString="1 1 1 zzz";
 
 	//static String Simvol="H";
 	//static int index=4;
@@ -24,20 +26,45 @@ public class MainAppStr {
 		String str=MainString;
 		System.out.println();
 		String result="";
-		//String[] words=str.split(" ");
-		char[] ch = (str.toLowerCase()).toCharArray();
-		for(int i=0;i<ch.length;i++) {
-		System.out.println(ch[i]-1);
+		String num="";
+		char[] ms =(str.toCharArray());
+
+
+		for(int i=0;i<ms.length;i++) {
+		if(Character.isAlphabetic(ms[i])) {
+			if((i+1)<(ms.length)) {
+				if(Character.isAlphabetic(ms[i+1]) ){
+				
+				result=result+String.format("%-3s",ms[i]);
+				num=num+String.format("%-3s",((String.valueOf(ms[i]).toLowerCase()).charAt(0))-'a'+1);
+				
+			}}else {
+				result=result+ms[i];
+				num=num+(((String.valueOf(ms[i]).toLowerCase()).charAt(0))-'a'+1);
+			}
+		}else {
+			result=result+ms[i];
+			num=num+" ";
 			
+		}	
+		
 			
 		}
 		
 		System.out.println(result);
+		System.out.println(num);
+		
 
+
+			
+			
+		}
+		
+		
 		
 		
 		
 		
 	}
 	
-}
+
